@@ -1,0 +1,168 @@
+//Breakpoints
+$L: min-width em(1000);
+$M: min-width em(768);
+$M-less: max-width em(768);
+$S: min-width em(500);
+
+.outer-wrapper {
+	background: url("../img/info/intro-bg.jpg") no-repeat top center;
+	background-size: cover;
+	@include media($L) {
+		background-attachment: fixed;
+	}
+}
+
+.intro-wrapper {
+	padding: 5em 0;
+	@include span-columns(12);
+	@include media($M) {
+		padding: 12em 0 10.03125em;
+		@include span-columns(10);
+		@include shift(1);
+	}
+}
+
+.press-badge {
+	@include position(absolute, -3em 0 null 0);
+	@include size(100px 100px);
+	background: url("../img/c&p.png") no-repeat center center,
+							#f6f6f6;
+	background-size: 60px 60px;
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 0 #ccc;
+	margin: 0 auto;
+	border-radius: 50px;
+}
+
+.full-screen-banner {
+	background: url("../img/info/mid-bg.jpg") no-repeat center center;
+	background-size: cover;
+	display: block;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	@include media($L) {
+		background-attachment: fixed;
+	}
+}
+
+.about-us {
+	padding: 2em 0 3.25em 0;
+}
+
+.services {
+	padding-top: 4em;
+	padding-bottom: 4em;
+	// padding: 4em 0;
+	h3 {
+		text-align: center;
+	}
+}
+
+section {
+	@include outer-container;
+	@include pad(1em);
+}
+
+aside {
+	@include span-columns(12);
+	padding-bottom: 2em;
+	@include media($M) {
+		padding-top: 5em;
+		@include span-columns(4);
+	}
+}
+
+article {
+	@include media($S) {
+		@include span-columns(10);
+		@include shift(1);
+	}
+	@include media($M) {
+		@include span-columns(6);
+		@include shift(1);
+	}
+}
+
+main {
+	// @include span-columns(12);
+	@include media($S) {
+		@include span-columns(10);
+		@include shift(1);
+	}
+	@include media($M) {
+		@include span-columns(8);
+		@include shift(2);
+	}
+}
+
+footer {
+	@include clearfix;
+	position: relative;
+	background-color: $off-black;
+	font-family: $sans-serif;
+	color: #545454;
+	padding: 1.5em 0;
+	text-align: center;
+	a {
+		color:#fff;
+	}
+	@include media($M) {
+		padding: 2em 0;
+	}
+}
+
+.footer-left, .footer-mid {
+	@include span-columns(6);
+	@include media($M) {
+		@include span-columns(3);
+	}
+}
+
+.footer-mid {
+	@include omega();
+	li {
+		display: inline;
+		margin: 0 0.5em;
+	}
+}
+
+.footer-right {
+	@include span-columns(12);
+	margin-top: 2em;
+	font-size: 0.85em;
+	font-family: $serif;
+	@include media($M) {
+		margin-top: 0;
+		@include span-columns(6);
+	}
+}
+
+.print-grid {
+	@include pad(0.5em);
+	column-count: 1;
+	column-gap: 0px;
+	line-height: 0;
+	@include media($S) {
+		column-count: 2;
+		column-gap: 0px;
+	}
+	@include media($L) {
+		column-count: 3;
+		column-gap: 0px;
+	}
+	img {
+		height: auto !important;
+		@include pad(0.5em);
+	}
+}
+
+// figure {
+// 	position: relative;
+// 	line-height: 0;
+// 	margin: 0;
+// }
+
+// figcaption {
+// 	color: #fff;
+// }

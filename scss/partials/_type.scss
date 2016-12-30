@@ -1,0 +1,140 @@
+//Default Style Overrides
+
+html {
+  font-size: 100%;
+  @include media(min-width 768px) {
+    font-size: 112.5%;
+  }
+}
+
+::selection { background: lighten(lightblue, 10%); }
+
+// OpenType Features & Ornamental
+
+.small-caps { font-feature-settings: "smcp"; } // True small caps.
+.dlig { font-feature-settings: "dlig"; } //Discretionary ligatures.
+
+.fleuron {
+  display: block;
+  text-align: center;
+  font-size: 4em;
+  line-height: 1;
+  color: $printer-red;
+}
+
+//Type Styles
+
+.menu-header {
+  font-size: 1.25em;
+  font-weight: 400;
+  padding: 1em 0;
+  margin: 0;
+  line-height: 1.25;
+  a {
+    color: $off-black;
+    &:hover, &:focus, &:active {
+      color: $off-black;
+  	}
+  }
+}
+
+.intro-paragraph {
+	@extend .dlig;
+	color: #fff;
+	font-size: 1.125em;
+	line-height: 1.75;
+	@include media($M) {
+		font-size: 1.5em;
+	}
+}
+
+.hire-paragraph {
+	font-style: italic;
+}
+
+// .footer-title {
+// 	font-family: $sans-serif;
+// 	// font-style: italic;
+// 	// font-size: 1.125em;
+// }
+
+#responsive_headline {
+	padding: 2em 0;
+	display: block;
+	line-height: 1.5;
+	visibility: hidden;
+	font-size: 126px;
+}
+	// font-family: $sans-serif;
+	// text-transform: uppercase;
+	// color: #fff;
+	// text-align: center;
+	// font-weight: 400;
+// }
+
+figcaption {
+	@include position(absolute, null 0 0 null);
+	font-size: 85%;
+	display: inline-block;
+	font-style: italic;
+	padding: 1.5em;
+}
+
+.headline-top {
+	font-size: 2.25em;
+	line-height: 1;
+	letter-spacing: 4px;
+	@include media($S) {
+		font-size: 3.25em;
+	}
+	@include media($M) {
+		letter-spacing: 8px;
+		margin-top: 0.5em;
+	}
+	text-transform: uppercase;
+}
+
+.headline-bottom {
+	font-size: 1.75em;
+	margin-top: 0.5em;
+	@include media($M) {
+		margin-top: 1em;
+	}
+	letter-spacing: 4px;
+	text-transform: uppercase;
+}
+
+.script-tagline {
+	margin-top: 1em;
+	@include media($M) {
+		margin-top: 2em;
+	}
+	font-size: 2.5em;
+	font-family:"penna-connected";
+	text-transform: none;
+}
+
+.tagline-bullets {
+	margin-top: 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-size: 0.85em;
+	@include media($S) {
+		letter-spacing: 4px;
+	}
+}
+
+.est {
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	padding: 1em;
+	letter-spacing: 2px;
+	display: inline-block;
+	margin: 5em 0 1.5em 0;
+	font-size: 0.66em;
+}
+
+.footer-title {
+	margin-top: 0;
+	padding-top: 0;
+	font-family: $sans-serif;
+}
